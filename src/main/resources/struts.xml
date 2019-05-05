@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="THE" namespace="/hello" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="check" class="cn.zhanglu.ssh.interceptors.CheckInterceptor"></interceptor>
+        </interceptors>
+
+        <action name="start" class="cn.zhanglu.ssh.action.LoginAction" method="start">
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
+
+        <action name="login" class="cn.zhanglu.ssh.action.LoginAction" method="login">
+
+            <result name="error">/WEB-INF/content/error.jsp</result>
+
+            <result name="success" type="redirectAction">
+                <param name="namespace">/hello</param>
+                <param name="actionName">list</param>
+            </result>
+
+        </action>
+
+        <action name="list" class="cn.zhanglu.ssh.action.EmpAction" method="list">
+            <interceptor-ref name="check"></interceptor-ref>
+            <result name="emp">/WEB-INF/content/emp.jsp</result>
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
+        
+    </package>
+</struts>
