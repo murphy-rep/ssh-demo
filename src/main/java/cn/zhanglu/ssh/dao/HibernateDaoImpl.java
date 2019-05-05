@@ -22,6 +22,15 @@ public class HibernateDaoImpl implements EmpDao{
     }
 
     @Override
+    public List<Emp> findPageAll() {
+        System.out.println("find page all");
+        String hql = "from Emp";
+        Session session = HibernateUtil.getSession();
+
+        return null;
+    }
+
+    @Override
     public void deleteEmp(int emp_id) {
 
     }
