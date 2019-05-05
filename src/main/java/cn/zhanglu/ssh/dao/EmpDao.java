@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface EmpDao {
     List<Emp> findAll();
+    List<Emp> findNowEmp();
     void deleteEmp(int emp_id);
     Emp findByName(String name);
     Emp findById(int emp_id);

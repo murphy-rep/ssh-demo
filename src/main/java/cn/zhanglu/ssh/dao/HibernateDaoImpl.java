@@ -22,6 +22,14 @@ public class HibernateDaoImpl implements EmpDao{
     }
 
     @Override
+    public List<Emp> findNowEmp() {
+
+
+
+        return null;
+    }
+
+    @Override
     public void deleteEmp(int emp_id) {
 
     }
