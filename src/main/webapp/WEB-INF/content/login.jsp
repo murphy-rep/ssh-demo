@@ -42,7 +42,7 @@
                             账号:
                         </td>
                         <td valign="middle" align="left">
-                            <input type="text" class="inputgri" name="username" />
+                            <input type="text" class="inputgri" name="user.username" />
                         </td>
                     </tr>
                     <tr>
@@ -50,7 +50,7 @@
                             密码:
                         </td>
                         <td valign="middle" align="left">
-                            <input type="password" class="inputgri" name="password" />
+                            <input type="password" class="inputgri" name="user.password" />
                         </td>
                     </tr>
                 </table>

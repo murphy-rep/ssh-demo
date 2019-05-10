@@ -8,6 +8,9 @@ import com.opensymphony.xwork2.ActionContext;
 import java.util.List;
 
 public class EmpAction {
+    //receive
+    private int num;
+    //send
     private List<Emp> emps;
 
     public List<Emp> getEmps(){

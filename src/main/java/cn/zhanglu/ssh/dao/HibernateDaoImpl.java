@@ -22,7 +22,7 @@ public class HibernateDaoImpl implements EmpDao{
     }
 
     @Override
-    public List<Emp> findPageAll() {
+    public List<Emp> findByPage() {
         System.out.println("find page all");
         String hql = "from Emp";
         Session session = HibernateUtil.getSession();

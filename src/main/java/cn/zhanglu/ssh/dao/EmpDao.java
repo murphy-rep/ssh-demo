@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EmpDao {
     List<Emp> findAll();
-    List<Emp> findPageAll();
+    List<Emp> findByPage();
     void deleteEmp(int emp_id);
     Emp findByName(String name);
     Emp findById(int emp_id);

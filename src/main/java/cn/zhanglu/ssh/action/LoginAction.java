@@ -7,13 +7,18 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import java.util.Map;
 
-public class LoginAction implements ModelDriven<User> {
+public class LoginAction  {
 
     User user = new User();
 
-    public User getModel(){
+    public User getUser() {
         return user;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 
     public String start(){
         System.out.println("hello");
