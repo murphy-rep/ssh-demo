@@ -1,4 +1,4 @@
-package cn.zhanglu.ssh.util;
+package cn.zhanglu.ssh.dao.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

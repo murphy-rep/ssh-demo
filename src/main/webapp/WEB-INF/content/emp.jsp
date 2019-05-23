@@ -102,13 +102,29 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                <s:if test="currentPage==1">
+                    <a class="page-link" href="#">Previous</a>
+                </s:if>
+                <s:else>
+                    <a class="page-link" href="/hello/list?currentPage=<s:property value="currentPage-1"/>" tabindex="-1">Previous</a>
+                </s:else>
             </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <s:iterator begin="1" end="totalPages" var="i">
+                <s:if test="currentPage==#i">
+                    <li class="page-item active"><a class="page-link" href="#"><s:property value="#i"/> </a></li>
+                </s:if>
+                <s:else>
+                    <li class="page-item"><a class="page-link" href="hello/list.action?pageSize=5&currentPage=<s:property value="#i"/>"><s:property value="#i"/> </a></li>
+                </s:else>
+            </s:iterator>
             <li class="page-item">
-                <a class="page-link" href="#">Next</a>
+                <s:if test="currentPage==pageSize">
+                    <a class="page-link" href="#">Next</a>
+                </s:if>
+                <s:else>
+                    <a class="page-link" href="/hello/list?currentPage=<s:property value="currentPage+1"/>">Next</a>
+                </s:else>
+
             </li>
         </ul>
     </nav>

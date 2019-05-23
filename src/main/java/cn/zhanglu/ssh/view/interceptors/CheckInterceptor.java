@@ -1,4 +1,4 @@
-package cn.zhanglu.ssh.interceptors;
+package cn.zhanglu.ssh.view.interceptors;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;

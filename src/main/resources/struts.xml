@@ -5,32 +5,46 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+
+    <constant name="struts.objectFactory" value="spring"/>
+
     <package name="THE" namespace="/hello" extends="struts-default">
 
         <interceptors>
-            <interceptor name="check" class="cn.zhanglu.ssh.interceptors.CheckInterceptor"></interceptor>
+            <interceptor name="check" class="cn.zhanglu.ssh.view.interceptors.CheckInterceptor"></interceptor>
+            <interceptor-stack name="check-stack">
+                <interceptor-ref name="check"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
         </interceptors>
 
-        <action name="start" class="cn.zhanglu.ssh.action.LoginAction" method="start">
+
+
+        <action name="start" class="loginAction" method="start">
             <result name="login">/WEB-INF/content/login.jsp</result>
         </action>
 
-        <action name="login" class="cn.zhanglu.ssh.action.LoginAction" method="login">
+        <action name="login" class="loginAction" method="login">
 
             <result name="error">/WEB-INF/content/error.jsp</result>
 
             <result name="success" type="redirectAction">
                 <param name="namespace">/hello</param>
                 <param name="actionName">list</param>
+                <param name="pageSize">5</param>
+                <param name="currentPage">1</param>
             </result>
 
         </action>
 
-        <action name="list" class="cn.zhanglu.ssh.action.EmpAction" method="list">
-            <interceptor-ref name="check"></interceptor-ref>
+        <action name="list" class="empAction" method="list" >
+
+
+            <interceptor-ref name="check-stack"/>
             <result name="emp">/WEB-INF/content/emp.jsp</result>
             <result name="login">/WEB-INF/content/login.jsp</result>
         </action>
         
     </package>
+
 </struts>

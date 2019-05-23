@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+        <!--<bean id="empDao" class="cn.zhanglu.ssh.dao.HibernateDaoImpl"></bean>-->
+        <!--<bean id="empService" class="cn.zhanglu.ssh.services.EmpServiceImpl">-->
+                <!--<property name="empDao" ref="empDao"/>-->
+        <!--</bean>-->
+        <!--<bean id="empAction" class="cn.zhanglu.ssh.view.action.EmpAction" scope="prototype">-->
+                <!--<property name="empService" ref="empService"/>-->
+        <!--</bean>-->
+        <context:component-scan base-package="cn.zhanglu.ssh"/>
+</beans>

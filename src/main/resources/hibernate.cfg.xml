@@ -29,12 +29,12 @@
         </property>
         <!-- 显示 -->
         <!-- 生成的sql是否打印到控制台，目的是便于我们调试 -->
-        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.show_sql">false</property>
         <!-- 生成的sql是否格式化 -->
         <property name="format_sql">true</property>
         <!-- 自动建表 -->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- 声明在配置文件中关联映射文件 -->
-        <mapping resource="Emp.hbm.xml"/>
+        <mapping resource="hbm/Emp.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
