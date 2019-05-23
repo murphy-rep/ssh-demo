@@ -30,16 +30,16 @@ public class LoginAction  {
     }
 
     public String login(){
-        System.out.println(user.getUsername()+" is try to login");
+        System.out.println("info: " + user.getUsername()+" -> log in...");
         if(user.getUsername().equals("zhanglu")&&user.getPassword().equals("000000")){
-            System.out.println(user.getUsername() + " login success");
+            System.out.println("info: " + user.getUsername() + " -> log in success!");
 
             Map<String,Object> session =  ActionContext.getContext().getSession();
             session.put("user",user);
 
             return "success";
         }else{
-            System.out.println(user.getName() + " login failed");
+            System.out.println("info: " + user.getName() + " -> log in fail!");
             return "error";
         }
     }

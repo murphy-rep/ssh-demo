@@ -59,17 +59,17 @@ public class EmpAction extends ActionSupport {
 
     //methods
     public String list(){
-        System.out.println("empAction get参数: "+currentPage+"  "+pageSize);
-        System.out.println("emps is loading...                     ");
+//        System.out.println("empAction get参数: "+currentPage+"  "+pageSize);
+//        System.out.println("emps is loading...                     ");
 
 //        String xmlPath= "applicationContext.xml";
 //        ApplicationContext applicationContext=
 //                new ClassPathXmlApplicationContext(xmlPath);
 //        empService = (EmpService) applicationContext.getBean("empService");
 
-        System.out.println("注入到 empAction 的 empService : "+empService);
+        System.out.println("info: 依赖注入 empService -> empAction   实例对象:"+empService);
         emps = empService.getEmpsByPage(currentPage,pageSize);
-        System.out.println("emps load finish!");
+//        System.out.println("emps load finish!");
 
         totalPages=3;
         return "emp";

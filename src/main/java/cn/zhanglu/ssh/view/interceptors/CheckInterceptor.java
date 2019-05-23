@@ -9,12 +9,12 @@ import java.util.Map;
 public class CheckInterceptor extends MethodFilterInterceptor {
     @Override
     protected String doIntercept(ActionInvocation actionInvocation) throws Exception {
-        System.out.println("前处理");
+        System.out.println("info: 过滤器前处理");
         Map<String,Object> session = ActionContext.getContext().getSession();
         if(session.get("user")!=null){
             actionInvocation.invoke();
         }
-        System.out.println("后处理");
+        System.out.println("info: 过滤器后处理");
         return "login";
     }
 

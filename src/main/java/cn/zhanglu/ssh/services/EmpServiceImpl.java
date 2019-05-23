@@ -33,7 +33,7 @@ public class EmpServiceImpl implements EmpService {
 //                new ClassPathXmlApplicationContext(xmlPath);
 //        empDao  =(EmpDao)applicationContext.getBean("empDao");
 
-        System.out.println("注入到 empService 的 empDao : "+empDao);
+        System.out.println("info: 依赖注入 empDao -> empService   实例对象:"+empDao);
         return empDao.findByPage(currentPage,pageSize);
     }
 

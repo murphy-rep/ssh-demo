@@ -7,13 +7,20 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-
+        <!--手动配置beans-->
         <!--<bean id="empDao" class="cn.zhanglu.ssh.dao.HibernateDaoImpl"></bean>-->
+
         <!--<bean id="empService" class="cn.zhanglu.ssh.services.EmpServiceImpl">-->
                 <!--<property name="empDao" ref="empDao"/>-->
         <!--</bean>-->
+
         <!--<bean id="empAction" class="cn.zhanglu.ssh.view.action.EmpAction" scope="prototype">-->
                 <!--<property name="empService" ref="empService"/>-->
         <!--</bean>-->
+
+        <!--<bean id="loginAction" class="cn.zhanglu.ssh.view.action.LoginAction" scope="prototype"></bean>-->
+
+        <!--自动扫描beans-->
         <context:component-scan base-package="cn.zhanglu.ssh"/>
+
 </beans>
