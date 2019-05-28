@@ -2,7 +2,6 @@ package cn.zhanglu.ssh.services;
 
 import cn.zhanglu.ssh.dao.EmpDao;
 import cn.zhanglu.ssh.entity.Emp;
-import cn.zhanglu.ssh.services.EmpService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,32 +14,26 @@ public class EmpServiceImpl implements EmpService {
     @Resource(name="empDao")
     private EmpDao empDao;
 
-    public void setEmpDao(EmpDao empDao) {
-        this.empDao = empDao;
-    }
+//    public void setEmpDao(EmpDao empDao) {
+//        this.empDao = empDao;
+//    }
 
-    @Override
-    public void addEmp() {
-        System.out.println("info: emp service");
-    }
+    //------------------------------------------------------------------
 
     @Override
     public List<Emp> getEmpsByPage(int currentPage, int pageSize) {
-        System.out.println("info: emp service");
 
-//        String xmlPath= "applicationContext.xml";
+//        String xmlPath= "spring-web.xml";
 //        ApplicationContext applicationContext=
 //                new ClassPathXmlApplicationContext(xmlPath);
 //        empDao  =(EmpDao)applicationContext.getBean("empDao");
 
-        System.out.println("info: 依赖注入 empDao -> empService   实例对象:"+empDao);
         return empDao.findByPage(currentPage,pageSize);
     }
 
     @Override
-    public void test() {
-        empDao.test();
-        System.out.println("spring: emp service");
+    public int findTotalPage(int pageSize) {
+        return empDao.findTotalPage(pageSize);
     }
 }
 

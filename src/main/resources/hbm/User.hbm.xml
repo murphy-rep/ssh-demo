@@ -5,22 +5,19 @@
     
 <hibernate-mapping>
 	<!-- class配置了对象和表的关系 -->
-	<class name="cn.zhanglu.ssh.entity.Emp" table="emp">
+	<class name="cn.zhanglu.ssh.entity.User" table="user_info">
 		<!-- id元素是用来配置主键字段和属性关系的
 			 name:属性名
 			 column:字段名
 			 type:两者者之间转换时使用的类型
 	 	-->
-		<id name="emp_id" column="Emp_id" type="integer">
+		<id name="id" column="id" type="integer">
 			<!-- 用来指明主键生成方式 -->
 			<generator class="native"></generator>
 		</id>
-		<property name="dept_id" column="dept_id" type="integer"/>
-		<property name="name" column="NAME" type="string"/>
-		<property name="age" column="AGE" type="integer"/>
-		<property name="salary" column="SALARY" type="double"/>
-		<property name="marry" column="MARRY" type="yes_no"/>
-		<property name="birthday" column="BIRTHDAY" type="date"/>
-		<property name="lastLoginTime" column="LAST_LOGIN_TIME" type="timestamp"/>
+		<property name="username" column="username" type="string"/>
+		<property name="name" column="name" type="string"/>
+		<property name="password" column="password" type="string"/>
+		<property name="gender" column="gender" type="string"/>
 	</class>
 </hibernate-mapping>
