@@ -1,4 +1,4 @@
-package cn.zhanglu.ssh.dao.util;
+package rubbish.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,10 +9,8 @@ public class HibernateUtil {
     private static SessionFactory sf;
 
     static{
-        //load config
         Configuration cfg = new Configuration();
-        cfg.configure("hibernate.cfg.xml");
-        //generate session factory
+        cfg.configure("rubbish/hibernate.cfg.xml");
         sf = cfg.buildSessionFactory();
     }
 

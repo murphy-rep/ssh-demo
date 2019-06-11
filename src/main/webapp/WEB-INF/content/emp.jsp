@@ -61,6 +61,9 @@
                     <td>
                         登录时间
                     </td>
+                    <td colspan="2">
+                        操作
+                    </td>
                 </tr>
                 <s:iterator value="emps" status="s">
                     <tr class="row${s.index % 2+1 }">
@@ -90,12 +93,18 @@
                         <td>
                             <s:property value="lastLoginTime"/>
                         </td>
+                        <td>
+                            <a href="/hello/updateEmp?emp_id=<s:property value="emp_id"/>"><button>set</button></a>
+                        </td>
+                        <td>
+                            <button>del</button>
+                        </td>
                     </tr>
                 </s:iterator>
             </table>
             <p>
                 <input type="button" class="button" value="添加员工"
-                       onclick="location.href='toAdd.action'"/>
+                       onclick="location.href='/hello/addEmp'"/>
             </p>
         </div>
     </div>

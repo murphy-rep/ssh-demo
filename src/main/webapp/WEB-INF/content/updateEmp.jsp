@@ -33,7 +33,7 @@
 					<h1>
 						update Emp info:
 					</h1>
-					<form action="update" method="post">
+					<form action="/hello/updateEmpP" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
 							<tr>

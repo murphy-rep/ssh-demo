@@ -10,6 +10,7 @@
 
     <package name="THE" namespace="/hello" extends="struts-default">
 
+        <!--登陆验证-->
         <interceptors>
             <interceptor name="check" class="cn.zhanglu.ssh.view.interceptors.CheckInterceptor"></interceptor>
             <interceptor-stack name="check-stack">
@@ -19,32 +20,56 @@
         </interceptors>
 
 
-
+        <!--log in-->
         <action name="start" class="loginAction" method="start">
             <result name="login">/WEB-INF/content/login.jsp</result>
         </action>
-
         <action name="login" class="loginAction" method="login">
-
             <result name="error">/WEB-INF/content/error.jsp</result>
-
             <result name="success" type="redirectAction">
                 <param name="namespace">/hello</param>
                 <param name="actionName">list</param>
                 <param name="pageSize">5</param>
                 <param name="currentPage">1</param>
             </result>
-
         </action>
 
+
+        <!--emp-->
+        <!--查找-->
         <action name="list" class="empAction" method="list" >
-
-
             <interceptor-ref name="check-stack"/>
             <result name="emp">/WEB-INF/content/emp.jsp</result>
             <result name="login">/WEB-INF/content/login.jsp</result>
         </action>
-        
+        <!--添加-->
+        <action name="addEmp" class="empAction" method="addEmpGet">
+            <interceptor-ref name="check-stack"/>
+            <result name="addEmp">/WEB-INF/content/addEmp.jsp</result>
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
+        <action name="addEmpP" class="empAction" method="addEmpGetP">
+            <interceptor-ref name="check-stack"/>
+            <result name="emp">/WEB-INF/content/emp.jsp</result>
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
+        <!--修改-->
+        <action name="updateEmp" class="empAction" method="updateEmpGet">
+            <interceptor-ref name="check-stack"/>
+            <result name="updateEmp">/WEB-INF/content/updateEmp.jsp</result>
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
+        <action name="updateEmpP" class="empAction" method="updateEmpGetP">
+            <interceptor-ref name="check-stack"/>
+            <result name="emp">/WEB-INF/content/emp.jsp</result>
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
+        <!--删除-->
+        <action name="deleteEmp" class="empAction" method="deleteEmpGet">
+            <interceptor-ref name="check-stack"/>
+            <result name="emp">/WEB-INF/content/emp.jsp</result>
+            <result name="login">/WEB-INF/content/login.jsp</result>
+        </action>
     </package>
 
 </struts>

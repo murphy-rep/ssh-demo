@@ -35,6 +35,33 @@ public class EmpServiceImpl implements EmpService {
     public int findTotalPage(int pageSize) {
         return empDao.findTotalPage(pageSize);
     }
+
+
+    //
+
+    @Override
+    public void deleteEmp(int emp_id) {
+        empDao.deleteEmp(emp_id);
+    }
+
+    @Override
+    public void addEmp(Emp emp) {
+        empDao.addEmp(emp);
+    }
+
+    @Override
+    public void updateEmp(Emp emp) {
+        empDao.updateEmp(emp);
+    }
+
+    //
+
+
+    @Override
+    public Emp findById(int emp_id) {
+        return empDao.findById(emp_id);
+
+    }
 }
 
 

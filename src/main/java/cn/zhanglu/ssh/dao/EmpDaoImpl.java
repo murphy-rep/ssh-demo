@@ -51,11 +51,11 @@ public class EmpDaoImpl implements EmpDao{
             @Override
             public Object doInHibernate(Session session) throws HibernateException, SQLException {
                 String hql = "from Emp";
-                 Query query = session.createQuery(hql)
-                         .setMaxResults(pageSize)
-                         .setFirstResult((currentPage-1)*pageSize);
-                 List<Emp> list = query.list();
-                 return query.list();
+                Query query = session.createQuery(hql)
+                        .setMaxResults(pageSize)
+                        .setFirstResult((currentPage-1)*pageSize);
+                List<Emp> list = query.list();
+                return query.list();
             }
         });
     }
@@ -121,6 +121,9 @@ public class EmpDaoImpl implements EmpDao{
 
     @Override
     public Emp findById(int emp_id) {
-        return null;
+        List emps = hibernateTemplate.find("from Emp emp  where emp.emp_id = "+ emp_id );
+        Emp emp = (Emp)emps.get(0);
+        //System.out.println(emp.toString());
+        return emp;
     }
 }

@@ -79,7 +79,7 @@
 						添加员工:
 					</h1>
 					
-					<form action="addEmp.action" method="post" onsubmit="return check_name()">
+					<form action="/hello/addEmpP" method="post" onsubmit="return check_name()">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
 							<tr>
